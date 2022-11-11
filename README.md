@@ -14,7 +14,7 @@ Example command to run a code.
 
 ## 2. SSHFS:
 
-SSHFS (SSH File System) provides a way to check and edit server files by our machine's file system GUI.
+SSHFS (SSH File System) provides a way to check and edit server local files by our machine's file system GUI.
 
 Example command to mount a remote directory to local directory `mnt`.
 
