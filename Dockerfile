@@ -10,6 +10,8 @@ RUN apt update && \
     apt clean && \
     rm -rf /var/lib/apt/lists/*
 
+WORKDIR /temp
+
 # set-up python
 RUN wget https://www.python.org/ftp/python/3.9.10/Python-3.9.10.tgz && \
     tar -xvf Python-3.9.10.tgz
