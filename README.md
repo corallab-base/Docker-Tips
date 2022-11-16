@@ -12,6 +12,8 @@ Example command to run a code.
 
 `docker run -it -v $(pwd)/server_folder:/docker_workdir dockerimage:tag python train.py`
 
+`nvidia-docker run -it -e NVIDIA_DRIVER_CAPABILITIES=compute,utility -e NVIDIA_VISIBLE_DEVICES=all -v $(pwd)/server_folder:/docker_workdir dockerimage:tag python train.py`
+
 ## 2. SSHFS:
 
 SSHFS (SSH File System) provides a way to check and edit server local files by our machine's file system GUI.
