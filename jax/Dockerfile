@@ -2,6 +2,9 @@
 
 FROM nvidia/cuda:11.6.0-cudnn8-devel-ubuntu20.04
 # as of the time of scripting this, the above fetches cuDNN 8.4.0.27
+# TODO: revisit following deprecation notice:
+#       THIS IMAGE IS DEPRECATED and is scheduled for DELETION
+#       https://gitlab.com/nvidia/container-images/cuda/blob/master/doc/support-policy.md
 
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt update && \
@@ -27,5 +30,5 @@ RUN wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh &
     conda activate $MY_CONDA_ENV_NAME && \
     pip install "jax[cuda11_cudnn82]" -f https://storage.googleapis.com/jax-releases/jax_cuda_releases.html
 
-RUN echo "source activate ${MY_CONDA_ENV_NAME}" > ~/.bashrc
+RUN echo "source activate ${MY_CONDA_ENV_NAME}" >> ~/.bashrc
 WORKDIR /jax-wkdir
